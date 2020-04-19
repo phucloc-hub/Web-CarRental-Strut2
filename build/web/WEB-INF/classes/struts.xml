@@ -1,0 +1,63 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="" class="sample.struts2.StartupAction">
+            <result>home.jsp</result>
+        </action>
+        <action name="home" class="sample.struts2.StartupAction">
+            <result>home.jsp</result>
+        </action>
+        
+        <action name="LoginAction" class="sample.struts2.LoginAction">
+            <result name="success">home.jsp</result>
+            <result name="fail">login.jsp</result>
+        </action>
+        <action name="RegisterAction" class="sample.struts2.RegisterAction">
+            <result name="success">validateGoogle.jsp</result>
+            <result name="input">register.jsp</result>
+            <result name="fail">error.jsp</result>
+           
+        </action>
+        <action name="ValidateAction" class="sample.struts2.ValidateAction">
+            <result name="success">login.html</result>
+            <result name="fail">validateGoogle.jsp</result>
+            <result name="input">validateGoogle.jsp</result>
+            
+        </action>
+        <action name="SearchAction" class="sample.struts2.SearchAction">
+            <result name="input" > home.jsp </result>
+            <result name="success" > home.jsp </result>
+        </action>
+        <action name="LogoutAction" class="sample.struts2.LogoutAction">            
+            <result name="success" > home.jsp </result>
+        </action>
+        <action name="AddtoCartAction" class="sample.struts2.AddtoCartAction">            
+            <result name="success" > home.jsp </result>
+        </action>
+        <action name="UpdateQuantityAction" class="sample.struts2.UpdateQuantityAction">            
+            <result name="success" > myCart.jsp </result>
+            <result name="input" > myCart.jsp </result>
+        </action>
+        <action name="DeleteAction" class="sample.struts2.DeleteAction"  >
+            <result>myCart.jsp</result>
+        </action>
+        <action name="CheckOutAction" class="sample.struts2.CheckOutAction"  >
+            <result>myCart.jsp</result>
+            <result name="fail">myCart.jsp</result>
+        </action>
+        <action name="DiscountAction" class="sample.struts2.DiscountAction"  >
+            <result>myCart.jsp</result>
+            <result name="input">myCart.jsp</result>
+        </action>
+       
+        
+        
+            
+        
+    </package>
+</struts>
